@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escala 5x2 · Gestão de jornada</title>
+  <meta name="description" content="Organize a escala 5x2 da sua equipe, distribua folgas, cubra o sábado e acompanhe horas semanais e mensais.">
+  <meta name="theme-color" content="#173f34">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173f34'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='26' fill='%23f6f1e7'%3E5%C3%972%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=5">
+</head>
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16v-5M12 16V7M17 16v-3"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="8" cy="18" r="2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3 1.4 4.1L17.5 8.5l-4.1 1.4L12 14l-1.4-4.1L6.5 8.5l4.1-1.4L12 3Z"/><path d="m19 14 .7 2.3L22 17l-2.3.7L19 20l-.7-2.3L16 17l2.3-.7L19 14Z"/><path d="m5 15 .6 1.9L7.5 17.5l-1.9.6L5 20l-.6-1.9L2.5 17.5l1.9-.6L5 15Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V8Z"/><path d="M17 10h2a3 3 0 0 1 0 6h-2M6 3v2M10 3v2M14 3v2"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/></symbol>
+    <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 17h12v4H6z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 17V5m0 0 4 4m-4-4L8 9"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/><path d="M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5-5m5 5-5 5"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17M15 9h4a1 1 0 0 1 1 1v11M8 7h3M8 11h3M8 15h3M2 21h20"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M7 21h10"/><path d="m5 7 7-2 7 2M5 7 2 14h6L5 7ZM19 7l-3 7h6l-3-7Z"/></symbol>
+    <symbol id="i-calendar-off" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M9 14l6 6M15 14l-6 6"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <button class="brand" type="button" data-action="go-schedule" aria-label="Ir para a escala">
+          <span class="brand-mark" aria-hidden="true">5<span>×</span>2</span>
+          <span class="brand-text">
+            <strong>Escala 5x2</strong>
+            <small id="brand-company">Kinhos Barber</small>
+          </span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <button class="nav-item is-active" type="button" data-nav-view="schedule" aria-current="page">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>
+            <span>Escala</span>
+          </button>
+          <button class="nav-item" type="button" data-nav-view="team">
+            <svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>
+            <span>Equipe</span>
+          </button>
+          <button class="nav-item" type="button" data-nav-view="reports">
+            <svg class="icon" aria-hidden="true"><use href="#i-chart"></use></svg>
+            <span>Relatório</span>
+          </button>
+          <button class="nav-item" type="button" data-nav-view="rules">
+            <svg class="icon" aria-hidden="true"><use href="#i-settings"></use></svg>
+            <span>Regras</span>
+          </button>
+        </nav>
+
+        <div class="topbar-actions">
+          <button class="btn btn-ghost btn-export" type="button" data-action="open-export">
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            <span>Exportar</span>
+          </button>
+          <button class="btn btn-primary" type="button" data-action="open-generate">
+            <svg class="icon" aria-hidden="true"><use href="#i-sparkles"></use></svg>
+            <span>Gerar escala</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="main">
+      <section id="view-schedule" class="view">
+        <div class="print-schedule-head print-only">
+          <div>
+            <strong id="print-schedule-company">Escala 5x2</strong>
+            <span id="print-schedule-range">—</span>
+          </div>
+          <span>Grade semanal · 5 dias de trabalho e 2 folgas</span>
+        </div>
+        <div class="page-head">
+          <div class="page-head-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span>Planejamento 5x2</div>
+            <h1>Escala da equipe</h1>
+            <p>Distribua as folgas, cubra o sábado e acompanhe as horas em tempo real. Clique em qualquer dia para ajustar.</p>
+          </div>
+          <div class="week-nav" aria-label="Navegação por semana">
+            <button class="icon-btn" type="button" data-action="prev-week" aria-label="Semana anterior">
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg>
+            </button>
+            <div class="week-nav-label">
+              <span>Semana</span>
+              <strong id="week-range">—</strong>
+            </div>
+            <button class="icon-btn" type="button" data-action="next-week" aria-label="Próxima semana">
+              <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+            </button>
+            <button class="btn btn-quiet btn-sm" type="button" data-action="this-week">Hoje</button>
+            <button class="btn btn-quiet btn-sm" type="button" data-action="print-schedule" aria-label="Imprimir grade semanal">
+              <svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>
+              <span>Imprimir</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="week-stats" class="stat-grid" aria-live="polite"></div>
+
+        <div class="schedule-layout">
+          <section class="panel schedule-panel" aria-labelledby="schedule-title">
+            <div class="panel-head">
+              <div>
+                <h2 id="schedule-title">Grade semanal</h2>
+                <p id="schedule-subtitle">Carregando escala…</p>
+              </div>
+              <div class="legend" aria-label="Legenda">
+                <span><i class="legend-dot is-work"></i>Jornada</span>
+                <span><i class="legend-dot is-off"></i>Folga</span>
+              </div>
+            </div>
+            <div id="schedule-scroll" class="table-scroll" tabindex="0" aria-label="Tabela da escala semanal">
+              <table id="schedule-table" class="schedule-table"></table>
+            </div>
+            <div class="panel-foot">
+              <span class="foot-hint"><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg> Os horários exibidos já descontam o intervalo.</span>
+              <span class="foot-hint foot-hint--desktop">Domingo fica fechado.</span>
+              <span class="foot-hint foot-hint--mobile"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg> Deslize a grade para ver todos os dias.</span>
+            </div>
+          </section>
+
+          <aside id="week-aside" class="aside-stack" aria-label="Resumo da semana"></aside>
+        </div>
+      </section>
+
+      <section id="view-team" class="view" hidden>
+        <div class="page-head">
+          <div class="page-head-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span>Pessoas e preferências</div>
+            <h1>Equipe</h1>
+            <p>Defina a carga semanal e a folga preferida de cada pessoa. A geração automática usa essas informações para montar a escala.</p>
+          </div>
+          <button class="btn btn-primary" type="button" data-action="add-employee">
+            <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg>
+            <span>Adicionar colaborador</span>
+          </button>
+        </div>
+        <div id="team-content"></div>
+      </section>
+
+      <section id="view-reports" class="view" hidden>
+        <div class="page-head">
+          <div class="page-head-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span>Fechamento e horas</div>
+            <h1>Relatório mensal</h1>
+            <p>Veja o total de horas, as folgas e os sábados de cada pessoa no mês selecionado.</p>
+          </div>
+          <div class="report-actions">
+            <div class="month-nav" aria-label="Navegação por mês">
+              <button class="icon-btn" type="button" data-action="prev-month" aria-label="Mês anterior">
+                <svg class="icon" aria-hidden="true"><use href="#i-chevron-left"></use></svg>
+              </button>
+              <strong id="report-month-label">—</strong>
+              <button class="icon-btn" type="button" data-action="next-month" aria-label="Próximo mês">
+                <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+              </button>
+            </div>
+            <button class="btn btn-ghost" type="button" data-action="this-month">Mês atual</button>
+            <button class="btn btn-quiet" type="button" data-action="print-report">
+              <svg class="icon" aria-hidden="true"><use href="#i-printer"></use></svg>
+              <span>Imprimir</span>
+            </button>
+          </div>
+        </div>
+        <div id="report-content"></div>
+      </section>
+
+      <section id="view-rules" class="view" hidden>
+        <div class="page-head">
+          <div class="page-head-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span>Funcionamento e limites</div>
+            <h1>Regras da escala</h1>
+            <p>Ajuste horários de funcionamento, cobertura mínima e os critérios usados na geração automática.</p>
+          </div>
+        </div>
+        <div id="rules-content"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p><strong>Escala 5x2</strong> · Ferramenta de apoio ao planejamento. Não substitui convenção coletiva, acordo de trabalho ou orientação jurídica e contábil.</p>
+        <p class="footer-local"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg> Seus dados ficam salvos neste navegador.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="assets/app.js?v=5"></script>
+</body>
+</html>
